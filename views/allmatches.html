@@ -1,0 +1,118 @@
+<div  ng-controller="mainController">
+<div class="filter">
+	<label> Filter by Team 1 </label>
+	<input  id=team1 ng-model=filterTeam1.team1.name type="text" class="form-control" placeholder="Search by Team 1" aria-label="...">
+</div>
+<div class="filter">
+	<label> Filter by Team 2 </label>
+	<input  id=team2 ng-model=filterTeam2.team2.name type="text" class="form-control" placeholder="Search by Team 2" aria-label="...">
+</div>
+<div class="filter">
+	<label> Filter by Date </label>
+     <input  id=year ng-model = filterDate.date type="text" class="form-control" placeholder="Search by Date" aria-label="... ">
+</div>
+<div class="filter">
+	<label> Filter by Score (Team 1) </label>
+     <input  id=score1 ng-model = filterscore1.score1 type="text" class="form-control" placeholder="Search by team 1 score" aria-label="... ">
+</div>
+<div class="filter">
+	<label> Filter by Score (Team 2) </label>
+     <input  id=score2 ng-model = filterscore2.score2 type="text" class="form-control" placeholder="Search by team 2 score" aria-label="... ">
+</div>
+
+
+<div class="row">
+	<div class="  .col-xs-6 .col-sm-3">
+		<table class="table table-hover">
+    	<caption style="text-align:center;font-size:30px;color:black">{{dayone.name}}</caption>
+    	<br> <br>
+  		<thead class="thead-inverse">
+   	  	<tr> 
+   			<th class="text-center">Date</th>
+   			<th class="text-center">Team 1</th>
+   			<th class="text-center">Score 1</th>
+   			<th class="text-center">Team 2</th>
+   			<th class="text-center">Score 2</th>
+      	</tr>                                            
+    	</thead>
+		<tbody ng-repeat=" item in dayone.rounds">
+  	  	<tr class="clickable-row" ng-repeat="item1 in item.matches | filter:filterTeam1 | filter:filterTeam2 | filter:filterDate.date | filter:filterscore1 |  filter:filterscore2">
+			<td class="text-center" >  {{item1.date}}</td>
+			<td class="text-center"> {{item1.team1.name}}</td>
+			<td class="text-center"> {{item1.score1}}<p class="text-center" ng-show="item1.score1 == null">--</p></td>
+			<td class="text-center"> {{item1.team2.name}} </td>
+			<td class="text-center"> {{item1.score2}}<p class="text-center" ng-show="item1.score2 == null">--</p></td>
+			<td class="text-center"><a ng-href= '#/match-details/0/{{dayone.rounds.indexOf(item)}}/{{item.matches.indexOf(item1)}}'>View Details</a></td>
+	  	</tr>
+		</tbody>
+		</table>
+	</div>
+	<br>
+	<br>
+	<div class="  .col-xs-6 .col-sm-3">
+		<table class="table table-hover">
+		<caption style="text-align:center;font-size:30px;color:black">{{daytwo.name}}</caption>
+		<br> <br>
+  		<thead class="thead-inverse">
+   	  	<tr> 
+   			<th class="text-center">Date</th>
+   			<th class="text-center">Team 1</th>
+   			<th class="text-center">Score 1</th>
+   			<th class="text-center">Team 2</th>
+   			<th class="text-center">Score 2</th>
+      	</tr>                                            
+    	</thead>
+		<tbody ng-repeat=" item in daytwo.rounds">
+  	  	<tr class="clickable-row" ng-repeat="item1 in item.matches |filter:filterTeam1 | filter:filterTeam2 | filter:filterDate.date | filter:filterscore1 | filter:filterscore2">
+			<td class="text-center" >  {{item1.date}}</td>
+			<td class="text-center"> {{item1.team1.name}}</td>
+			<td class="text-center"> {{item1.score1}}<p class="text-center" ng-show="item1.score1 == null">--</p></td>
+			<td class="text-center"> {{item1.team2.name}} </td>
+			<td class="text-center"> {{item1.score2}}<p class="text-center" ng-show="item1.score2 == null">--</p></td>
+			<td class="text-center"><a ng-href= '#/match-details/1/{{daytwo.rounds.indexOf(item)}}/{{item.matches.indexOf(item1)}}'>View Details</a></td>
+	  	</tr>
+		</tbody>
+		</table>
+	</div>
+	<ul class="pager">
+        <li class="next">
+    	    <a href="#/">Back to Home &rarr;</a>
+        </li>
+    </ul>
+</div>
+</div>
+
+<!--
+
+
+<div class="row" ng-controller="mainController">
+	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+	<h1>{{dayone.name}}</h1>
+	<div ng-repeat="item in dayone.rounds">
+		<h3>{{item.name}}</h3>
+		<div ng-repeat="item1 in item.matches">
+			<p>Match Date : {{item1.date}} </p>
+			<p>Team 1: {{item1.team1.name}}</p>
+			<p>Team 2: {{item1.team2.name}}</p>
+			<button type="button" class="btn btn-default">View Details</button> <br><br>
+		</div>
+		<hr>
+	</div>
+	<h1>{{daytwo.name}}</h1>
+	<div ng-repeat="item in daytwo.rounds">
+		<h3>{{item.name}}</h3>
+		<div ng-repeat="item1 in item.matches">
+			<p>Match Date : {{item1.date}} </p>
+			<p>Team 1: {{item1.team1.name}}</p>
+			<p>Team 2: {{item1.team2.name}}</p>
+			<button type="button" class="btn btn-default">View Details</button> <br><br>
+		</div>
+		<hr>
+	</div>		
+	<ul class="pager">
+        <li class="next">
+    	    <a href="#/">Back to Home &rarr;</a>
+        </li>
+    </ul>
+    </div>
+</div> -->

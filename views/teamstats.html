@@ -1,0 +1,25 @@
+<div ng-controller="mainController">
+	<div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+   			Teams
+        </h4>
+      </div>
+        <div class="panel-body">
+        <div ng-repeat="i in a ">
+        	<a href="#/teams/{{a.indexOf(i)}}"> {{i}}</a> <br>
+        </div>
+        		
+        	<div style="float:right" >
+      		
+    	    	<a href="#/">Back &rarr;</a>
+        
+      		</div>
+
+        </div>
+
+    </div>
+  </div>
+
+</div>

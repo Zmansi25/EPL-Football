@@ -1,0 +1,25 @@
+<div ng-controller="mainController">
+	<div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+   			Rankings (Most matches won)
+        </h4>
+      </div>
+        <div class="panel-body">
+        <div ng-repeat="i in rankings | orderBy:'-state' ">
+        	<p> {{$index+1}}. {{i.name}}</p> 
+        </div>
+        		
+        	<div style="float:right" >
+      		
+    	    	<a href="#/">Back &rarr;</a>
+        
+      		</div>
+
+        </div>
+
+    </div>
+  </div>
+
+</div>

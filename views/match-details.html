@@ -1,0 +1,48 @@
+<div ng-controller="mainController" >
+ 
+
+<div class="panel-group">
+	<div class="panel panel-default">
+   		<div class="panel-body">
+			<div  ng-if="yeardet==0">
+				<p>Match Name :  {{ first[whichmatch].name }}</p>
+      	<p>Match Date: {{first[whichmatch].matches[roundsdet].date }} </p>
+      	<p>{{first[whichmatch].matches[roundsdet].team1.name }} VS  {{first[whichmatch].matches[roundsdet].team2.name }} </p>
+    		<p>{{first[whichmatch].matches[roundsdet].team1.name }} Scored: {{first[whichmatch].matches[roundsdet].score1 }} points </p>
+    		<p>{{first[whichmatch].matches[roundsdet].team2.name }} Scored: {{first[whichmatch].matches[roundsdet].score2 }} points </p>
+
+    	</div>
+    	<div  ng-if="yeardet!=0">
+				<p>Match Name :  {{ second[whichmatch].name }}</p>
+    		<p>Match Date: {{second[whichmatch].matches[roundsdet].date }} </p>
+    		<p>{{second[whichmatch].matches[roundsdet].team1.name }} VS {{second[whichmatch].matches[roundsdet].team2.name }}</p>
+    		<p>{{second[whichmatch].matches[roundsdet].team1.name }} Scored: {{second[whichmatch].matches[roundsdet].score1 }} </p>
+    		<p>{{second[whichmatch].matches[roundsdet].team2.name }} Scored: {{second[whichmatch].matches[roundsdet].score2 }} </p>
+			</div>
+      		<div ng-if="first[whichmatch].matches[roundsdet].score1 > first[whichmatch].matches[roundsdet].score2 && yeardet==0 ">
+      			Winner: {{first[whichmatch].matches[roundsdet].team1.name }}
+      		</div>
+      		<div ng-if="first[whichmatch].matches[roundsdet].score1 < first[whichmatch].matches[roundsdet].score2 && yeardet==0">
+      			Winner: {{first[whichmatch].matches[roundsdet].team2.name }}
+      		</div>
+      		<div ng-if="second[whichmatch].matches[roundsdet].score1 > second[whichmatch].matches[roundsdet].score2 && yeardet==1 ">
+      			Winner: {{second[whichmatch].matches[roundsdet].team1.name }}
+      		</div>
+      		<div ng-if="second[whichmatch].matches[roundsdet].score1 < second[whichmatch].matches[roundsdet].score2 && yeardet==1">
+      			Winner: {{second[whichmatch].matches[roundsdet].team2.name }}
+      		</div>
+      		<div ng-if="first[whichmatch].matches[roundsdet].score1 == first[whichmatch].matches[roundsdet].score2 ">
+      			Match Draw
+      		</div>
+      		<div style="float:right" >
+      		
+    	    	<a href="#/allmatches">Back &rarr;</a>
+        
+      		</div>
+    	</div>
+    </div>
+
+</div>
+
+
+</div>
