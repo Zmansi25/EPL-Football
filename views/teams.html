@@ -1,29 +1,22 @@
-<div ng-controller="mainController">
-<div class="panel-group">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-   			Team Statistics
-        </h4>
+<div style="font-family: 'Amaranth'; font-size:1.5em">
+   <div class="panel-group">
+      <div class="panel panel-default">
+         <div class="panel-heading">
+            <h2 class="panel-title"  style=" font-family: 'Amaranth'">
+               Team Statistics -  <span ng-show="team.teamname1">{{team.teamname1}}</span><span ng-show="!team.teamname1">{{team.teamname2}}</span>
+            </h2>
+         </div>
+         <div class="panel-body">
+            <p>Total Matches played : {{team.totalMatchesPlayed}}</p>
+            <p>Total Goals Scored : {{team.totalgoals}}</p>
+            <p>Total Matches won: {{team.totalWins}}</p>
+            <p>Total Matches Lost: {{team.totalLost}} </p>
+            <p>Total Matches draw: {{team.totaltie}}</p>
+            <p>Win percentage of the team: {{ (team.totalWins/team.totalMatchesPlayed) * 100 | number:2}} %</p>
+            <div style="float:right" >
+               <a href="#/allmatches">Back &rarr;</a>
+            </div>
+         </div>
       </div>
-        <div class="panel-body">
-
-        	<p>Total Matches played by {{a[teamid]}} :{{match[teamid]}}</p>
-        	<p>Total Goals Scored : {{scores[teamid]}}</p>
-        	<p>Total Matches won: {{wins[teamid]}}</p>
-          <p>Total Matches Lost: {{match[teamid] - ( wins[teamid] + draws[teamid] )}} </p>
-          <p>Total Matches draw: {{draws[teamid]}}</p>
-          <p>Win percentage of the team: {{ (wins[teamid]/match[teamid]) * 100 | number:2}} %</p>
-        	<div style="float:right" >
-      		
-    	    	<a href="#/teamstats">Back &rarr;</a>
-        
-      		</div>
-        </div>
-    </div>
-  </div>
-
-	
-		
-		
+   </div>
 </div>

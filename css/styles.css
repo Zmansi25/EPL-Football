@@ -3,10 +3,17 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+html{
+overflow:hidden;
+
+}
 body {
   font-family: 'Amaranth';
-  font-size: 20px;
+  font-size: 1.25em;
   color: #333333;
+  word-break:break-word;
+overflow-x: hidden;
+
 
 }
 p {
@@ -146,7 +153,6 @@ hr.small {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  margin-bottom: 50px;
       position: relative;
     width: 100%;
   min-height: auto;
@@ -362,3 +368,37 @@ body {
 div label {
     display: block;
 }
+
+.container {
+    padding: 2px 16px;
+
+}
+
+.w3-card-4
+{
+
+  
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1); 
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);   
+
+}
+.w3-card-4:hover
+{
+   
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.1);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.1);
+    transition: all 200ms ease-in;
+    transform: scale(1.1);
+}
+

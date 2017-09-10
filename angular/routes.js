@@ -7,30 +7,37 @@ myApp.config(['$routeProvider', function($routeProvider){
         	// Which controller it should use 
             controller 		: 'mainController',
             // what is the alias of that controller.
+            controllerAs    : 'md'
+
+
         })
         .when('/allmatches',{
         	templateUrl     : 'views/allmatches.html',
         	controller 		: 'mainController',
-        
+            controllerAs    : 'md'
         })
         .when('/teamstats',{
             templateUrl     : 'views/teamstats.html',
-            controller      : 'mainController'
-        
+            controller: 'matchDetailsController',
+            controllerAs    : 'matchdetails'
         })        
-        .when('/teams/:id',{
+        .when('/teams/:teamcode/:teamkey',{
             templateUrl     : 'views/teams.html',
-            controller      : 'mainController',
+            controller      : 'teamsController',
+            controllerAs    : 'team'
            
         
         })  
-        .when('/match-details/:yearid/:guitarID/:roundsid', {
+        .when('/match-details/:date/:team1code/:team2code', {
             templateUrl: 'views/match-details.html',
-            controller: 'mainController'
+            controller: 'matchDetailsController',
+            controllerAs    : 'matchdetails'
+
         })
-        .when('/ranking',{
-            templateUrl     : 'views/rankings.html',
-            controller      : 'mainController',
+        .when('/partners',{
+            templateUrl     : 'views/partners.html',
+            controller      : 'teamsController',
+            controllerAs    : 'team'
         
         })
         .otherwise(
